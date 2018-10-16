@@ -1,0 +1,84 @@
+proxy:
+    secretToken: "generatesecrettoken"
+    service:
+        loadBalancerIP: "xx.xx.xx.xx"
+    https:
+        hosts:
+            - hostname.net
+        letsencrypt:
+            contactEmail: "your-admin@email.net"
+singleuser:
+    initContainers:
+        - name: esdl-shared
+          image: alpine/git
+          command: ["/bin/sh","-c"]
+          args: ["git clone https://github.com/esa-esdl/esdl-shared.git /shared-nb"]
+          securityContext:
+              readOnlyRootFilesystem: true
+          volumeMounts:
+              - name: shared-nb
+                mountPath: /shared-nb
+    securityContext:
+        allowPrivilegeEscalation: false
+        runAsUser: 1000
+        fsGroup: 100
+    image:
+        name: eu.gcr.io/jupyterhub-218810/singleuser-julia-nb
+        tag: "0.5.2"
+        defaultUrl: "/lab"
+    storage:
+        homeMountPath: /home/jovyan/work/workspace
+        extraVolumes:
+            - name: nfs
+              persistentVolumeClaim:
+                  claimName: nfs
+            - name: shared-nb
+              emptyDir: {}
+        extraVolumeMounts:
+            - name: nfs
+              mountPath: /home/jovyan/work/datacube
+              subPath: datacube
+            - name: shared-nb
+              mountPath: /home/jovyan/work/shared-nb
+              subPath: notebooks
+    memory:
+        limit: 4G
+        guarantee: 2G
+hub: 
+    extraEnv: 
+        JUPYTER_ENABLE_LAB: 1
+    extraConfig: 
+        c.KubeSpawner.cmd = ['jupyter-labhub']
+auth:
+    admin:
+        users:
+            - admin-user
+    type: github
+    github: 
+        clientId: "create-oauth-app"
+        clientSecret: "create-oauth-app"
+        callbackUrl: "https://hostname.net/hub/oauth_callback"
+    whitelist:
+        users:
+            - user1
+            - user2
+            - user3
+            - user4
+            - user5
+prePuller:
+    continuous:
+        enabled: true
+cull:
+    timeout: 900
+    every: 300
+scheduling:
+    userScheduler:
+        enabled: true
+    userPlaceholder:
+        enabled: true
+        replicas: 3
+    podPriority:
+        enabled: true
+    userPods:
+        nodeAffinity:
+            matchNodePurpose: require
