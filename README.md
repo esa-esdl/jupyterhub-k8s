@@ -33,6 +33,7 @@ All the commands below are to be executed inside Google Cloud Shell.
 	
 #### Create NFS server (for the datacube)
 * `cd nfs`
+* `./create-datacube-volume.sh`
 * `./create-nfs-server.sh`
 * `kubectl -n jupyterhub describe service nfs-server`
   * copy the value of `IP` field, to be used on the next step
