@@ -13,7 +13,7 @@ All the commands below are to be executed inside Google Cloud Shell.
 * `git clone https://github.com/esa-esdl/jupyterhub-k8s.git`
 * `cd jupyterhub-k8s`
 * `vim config.yaml`
-  * `proxy.secretToken`: generate the value https://zero-to-jupyterhub-with-kubernetes.readthedocs.io/en/latest/reference.html?highlight=secrettoken#proxy-secrettoken
+  * `proxy.secretToken`: generate the [secret token](https://zero-to-jupyterhub-with-kubernetes.readthedocs.io/en/latest/reference.html?highlight=secrettoken#proxy-secrettoken)
   * `proxy.service.loadBalancerIP`: reserve a static IP address and use its value
   * `proxy.https.hosts`: select a host name
   * `proxy.https.letsencrypt.contactEmail`: an email address to which an expiry notice will be sent
