@@ -10,7 +10,6 @@ All the commands below are to be executed inside Google Cloud Shell.
 * `./create_clusters.sh`
 
 #### Install and Start Jupyterhub:
-* `gcloud container clusters create jupyterhub-kubernetes --num-nodes=2 --machine-type=n1-standard-1 --zone=europe-west3-a`
 * `git clone https://github.com/esa-esdl/jupyterhub-k8s.git`
 * `cd jupyterhub-k8s`
 * `./initialize-helm.sh`
