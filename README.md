@@ -4,11 +4,12 @@ A full instruction on how to deploy Jupyterhub with Kubernetes is available [her
 
 ## Deployment at GKE
 
+All the commands below are to be executed inside Google Cloud Shell.
+
 to create a cluster:
 * `./create_clusters.sh`
 
 to start Jupyterhub:
-* open google cloud console
 * `gcloud container clusters create jupyterhub-kubernetes --num-nodes=2 --machine-type=n1-standard-1 --zone=europe-west3-a`
 * `git clone https://github.com/esa-esdl/jupyterhub-k8s.git`
 * `cd jupyterhub-k8s`
