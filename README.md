@@ -27,7 +27,7 @@ All the commands below are to be executed inside Google Cloud Shell.
 	
 #### Upload existing Docker images to GCR:
 * follow this instruction: https://cloud.google.com/container-registry/docs/pushing-and-pulling
-  * for authentication, run `gcloud auth login`
+  * for authentication, run `gcloud auth login` and then follow the instructions
 	
 More resources:
 * https://gist.github.com/tallclair/849601a16cebeee581ef2be50c351841 (mount git repo using emptyDir)
