@@ -7,11 +7,11 @@ A full instruction on how to deploy Jupyterhub with Kubernetes is available [her
 All the commands below are to be executed inside Google Cloud Shell.
 
 #### Create a cluster
+* `git clone https://github.com/esa-esdl/jupyterhub-k8s.git`
+* `cd jupyterhub-k8s`
 * `./create_clusters.sh`
 
 #### Install and Start Jupyterhub
-* `git clone https://github.com/esa-esdl/jupyterhub-k8s.git`
-* `cd jupyterhub-k8s`
 * `vim config.yaml`
   * `proxy.secretToken`: generate the [secret token](https://zero-to-jupyterhub-with-kubernetes.readthedocs.io/en/latest/reference.html?highlight=secrettoken#proxy-secrettoken)
   * `proxy.service.loadBalancerIP`: reserve a static IP address and use its value
