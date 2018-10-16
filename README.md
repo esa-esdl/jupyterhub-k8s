@@ -8,7 +8,7 @@ All the commands below are to be executed inside Google Cloud Shell.
 
 #### Create a cluster
 * `git clone https://github.com/esa-esdl/jupyterhub-k8s.git`
-* `cd jupyterhub-k8s`
+* `cd jupyterhub-k8s/scripts`
 * `./create_clusters.sh`
 
 #### Install and Start Jupyterhub
