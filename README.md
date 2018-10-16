@@ -6,26 +6,26 @@ A full instruction on how to deploy Jupyterhub with Kubernetes is available [her
 
 All the commands below are to be executed inside Google Cloud Shell.
 
-to create a cluster:
+#### Create a cluster:
 * `./create_clusters.sh`
 
-to start Jupyterhub:
+#### Install and Start Jupyterhub:
 * `gcloud container clusters create jupyterhub-kubernetes --num-nodes=2 --machine-type=n1-standard-1 --zone=europe-west3-a`
 * `git clone https://github.com/esa-esdl/jupyterhub-k8s.git`
 * `cd jupyterhub-k8s`
 * `./initialize-helm.sh`
 * `./install-jupyterhub.sh`
 	
-to stop and remove (also remove cluster):
+#### Stop and remove Jupyterhub (also remove cluster):
 * `./remove-jupyterhub-kube.sh`
 * `gcloud container clusters delete jupyterhub-kubernetes --zone=europe-west3-a`
 	
-to create nfs server (for the datacube):
+#### Create NFS server (for the datacube):
 * `cd nfs`
 * `./create-nfs-server.sh`
 * `./create-nfs-volume.sh`
 	
-to upload existing Docker images to GCR:
+#### Upload existing Docker images to GCR:
 * follow this instruction: https://cloud.google.com/container-registry/docs/pushing-and-pulling
   * for authentication, run gcloud auth login
 	
