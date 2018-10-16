@@ -14,6 +14,7 @@ All the commands below are to be executed inside Google Cloud Shell.
 * `cd jupyterhub-k8s`
 * `./initialize-helm.sh`
 * `./install-jupyterhub.sh`
+* `kubectl -n jupyterhub get all` -> to check if installation has been successful. Ensure that none of the pods or services indicates some errors
 	
 #### Stop and remove Jupyterhub (also remove cluster):
 * `./remove-jupyterhub-kube.sh`
