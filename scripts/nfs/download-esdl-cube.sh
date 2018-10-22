@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# this is to be executed only after nfs server (wit nfs-wget image) is up
+
 CUBE_NAME=$1
 NFS_POD=$(kubectl --namespace jupyterhub get pods --no-headers -o custom-columns=":metadata.name" --selector role=nfs-server)
 
