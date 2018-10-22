@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-export CORE_CLUSTER_NAME=core-cluster
+export CORE_CLUSTER_NAME=jupyterhub-cluster
 export CORE_MACHINE_TYPE=n1-standard-2
 export CORE_BOOT_DISK_TYPE=pd-standard
 export CORE_NUM_NODES=1
 export CORE_ZONE=europe-west3-a
-export JUPYTER_USER_MACHINE_TYPE=n1-standard-2
+export JUPYTER_USER_MACHINE_TYPE=n1-highmem-2
 export JUPYTER_USER_BOOT_DISK_TYPE=pd-standard
 export JUPYTER_USER_MIN_NODES=0
 export JUPYTER_USER_MAX_NODES=10
