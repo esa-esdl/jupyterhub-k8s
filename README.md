@@ -8,7 +8,8 @@ All the commands below are to be executed inside Google Cloud Shell.
 
 #### Pre-requisites
 * Create a project in GCP by first clicking the project list button at the top toolbar, and then click `new project`
-  
+  ![Alt text](docs/gcp-create-project.png?raw=true "Create a new project in GCP")
+* When using Kubernetes Engine for the first time, you may need to activate Kubernetes Engine API. This is done by selecting `Kubernetes Engine` and there should be an activate button somewhere on the page.
 
 #### Create a cluster
 * `git clone https://github.com/esa-esdl/jupyterhub-k8s.git`
