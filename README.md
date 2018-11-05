@@ -14,7 +14,7 @@ All the commands below are to be executed inside Google Cloud Shell.
 #### Install and Start Jupyterhub
 * `vim config.yaml`
   * `proxy.secretToken`: generate the [secret token](https://zero-to-jupyterhub.readthedocs.io/en/latest/reference.html?highlight=secrettoken#proxy-secrettoken)
-  * `proxy.service.loadBalancerIP`: reserve a static IP address and use its value
+  * `proxy.service.loadBalancerIP`: reserve a static IP address and use its value (in GCP: go to Networking > VPC network > External IP addresses, and then click `reserve static address`)
   * `proxy.https.hosts`: select a host name
   * `proxy.https.letsencrypt.contactEmail`: an email address to which an expiry notice will be sent
   * `auth.admin.users`: list of GitHub usernames that will have admin role
