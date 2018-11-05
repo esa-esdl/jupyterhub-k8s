@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: nfs-server
-        image: eu.gcr.io/jupyterhub-218810/nfs-wget:0.8
+        image: eu.gcr.io/<project-name>/nfs-wget:0.8
         ports:
           - name: nfs
             containerPort: 2049

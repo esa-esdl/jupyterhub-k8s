@@ -23,7 +23,7 @@ singleuser:
         runAsUser: 1000
         fsGroup: 100
     image:
-        name: eu.gcr.io/jupyterhub-218810/singleuser-julia-nb
+        name: quay.io/esdc/singleuser-julia-nb
         tag: "0.5.2"
         defaultUrl: "/lab"
     storage:
