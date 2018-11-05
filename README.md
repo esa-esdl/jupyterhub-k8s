@@ -37,6 +37,7 @@ All the commands below are to be executed inside Google Cloud Shell.
 * `gcloud container clusters delete jupyterhub-kubernetes --zone=europe-west3-a`
 	
 #### Create NFS server (for the datacube)
+* In order to be able to run `download-esdl-cube.sh` script to download the datacube to the NFS server, please create a custom NFS Server Docker image. Instruction is available at the [readme](https://github.com/esa-esdl/jupyterhub-k8s/blob/master/scripts/nfs/nfs-wget/README.md). And then, modify the image name in `nfs-server-rc.yaml` to use the new image name. 
 * `cd nfs`
 * `./create-datacube-volume.sh`
 * `./create-nfs-server.sh`
