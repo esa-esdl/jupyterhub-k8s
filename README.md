@@ -4,7 +4,11 @@ A full instruction on how to deploy Jupyterhub with Kubernetes is available [her
 
 ## Deployment at GKE
 
-All the commands below are to be executed inside Google Cloud Shell.
+All the commands below are to be executed inside Google Cloud Shell. 
+
+#### Pre-requisites
+* Create a project in GCP by first clicking the project list button at the top toolbar, and then click `new project`
+  
 
 #### Create a cluster
 * `git clone https://github.com/esa-esdl/jupyterhub-k8s.git`
