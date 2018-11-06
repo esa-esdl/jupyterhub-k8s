@@ -28,13 +28,6 @@ All the commands below are to be executed inside Google Cloud Shell.
 * `./initialize-helm.sh`
 * `./install-jupyterhub.sh`
 * `kubectl -n jupyterhub get all` -> _to check if installation has been successful. Ensure that none of the pods or services indicates some errors. It may take a while until all the Kubernetes objects are up and running._
-
-#### Upgrade Jupyterhub after configuration changes
-* `helm upgrade jupyterhub-kube jupyterhub/jupyterhub --version=v0.8-e29f3e7 -f config.yaml`
-	
-#### Stop and remove Jupyterhub (also remove cluster)
-* `./remove-jupyterhub-kube.sh`
-* `gcloud container clusters delete jupyterhub-kubernetes --zone=europe-west3-a`
 	
 #### Create NFS server (for the datacube)
 * In order to be able to run `download-esdl-cube.sh` script to download the datacube to the NFS server, please create a custom NFS Server Docker image. Instruction is available at the [readme](https://github.com/esa-esdl/jupyterhub-k8s/blob/master/scripts/nfs/nfs-wget/README.md). And then, modify the image name in `nfs-server-rc.yaml` to use the new image name. 
@@ -50,6 +43,13 @@ All the commands below are to be executed inside Google Cloud Shell.
 #### Upload existing Docker images to GCR
 * follow this instruction: https://cloud.google.com/container-registry/docs/pushing-and-pulling
   * for authentication, run `gcloud auth login` and then follow the instructions
+  
+#### Upgrade Jupyterhub after configuration changes
+* `helm upgrade jupyterhub-kube jupyterhub/jupyterhub --version=v0.8-e29f3e7 -f config.yaml`
+	
+#### Stop and remove Jupyterhub (also remove cluster)
+* `./remove-jupyterhub-kube.sh`
+* `gcloud container clusters delete jupyterhub-kubernetes --zone=europe-west3-a`
 	
 More resources:
 * https://gist.github.com/tallclair/849601a16cebeee581ef2be50c351841 (mount git repo using emptyDir)
