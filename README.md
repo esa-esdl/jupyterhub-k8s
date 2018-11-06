@@ -24,7 +24,7 @@ All the commands below are to be executed inside Google Cloud Shell.
   * `proxy.https.letsencrypt.contactEmail`: an email address to which an expiry notice will be sent
   * `auth.admin.users`: list of GitHub usernames that will have admin role
   * `auth.whitelist.users`: list of GitHub usernames that are allowed access to the Jupyterhub
-  * `auth.github.[clientId|clientSecret|callbackUrl]`: information required for OAuth using [GitHub](https://zero-to-jupyterhub-with-kubernetes.readthedocs.io/en/latest/authentication.html?highlight=github#github)
+  * `auth.github.[clientId|clientSecret|callbackUrl]`: information required for OAuth using [GitHub](https://zero-to-jupyterhub.readthedocs.io/en/latest/authentication.html?highlight=github#github)
 * `./initialize-helm.sh`
 * `./install-jupyterhub.sh`
 * `kubectl -n jupyterhub get all` -> _to check if installation has been successful. Ensure that none of the pods or services indicates some errors. It may take a while until all the Kubernetes objects are up and running._
